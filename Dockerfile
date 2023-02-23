@@ -7,6 +7,4 @@ RUN apt-get update && \
 VOLUME /tftpboot
 EXPOSE 69/udp
 
-COPY files/entrypoint.sh /
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/sbin/in.tftpd", "-L", "--secure", "/tftpboot"]
