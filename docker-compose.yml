@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  tftp-server:
+    image: tftpserver
+    build: .
+    volumes:
+      - ${TFTP_FOLDER}:/tftpboot
+    network_mode: 'host'
